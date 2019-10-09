@@ -1,9 +1,7 @@
 version: '3.7'
 services:
   spark:
-    build:
-      context: ..
-      dockerfile: Dockerfile
+    image: jonatasedward/spark_base
     container_name: spark-master
     environment:
       SPARK_MASTER_PORT: 7077
