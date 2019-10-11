@@ -7,11 +7,8 @@ ENV HADOOP_VERSION=2.7
 RUN apt-get update -qq && \
     apt-get install -qq -y gnupg2 wget openjdk-8-jdk
 
-RUN apt-get remove scala-library scala && \
-    wget http://scala-lang.org/files/archive/scala-2.12.1.deb && \
-    dpkg -i scala-2.12.1.deb && \
-    apt-get update && \
-    apt-get install scala
+RUN wget http://scala-lang.org/files/archive/scala-2.11.8.deb && \
+    dpkg -i scala-2.11.8.deb
 
 WORKDIR /
 
