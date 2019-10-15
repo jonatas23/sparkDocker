@@ -5,7 +5,10 @@ ENV SPARK_VERSION=2.4.4
 ENV HADOOP_VERSION=2.7
 
 RUN apt-get update -qq && \
-    apt-get install -qq -y gnupg2 wget openjdk-8-jdk scala
+    apt-get install -qq -y gnupg2 wget openjdk-8-jdk
+
+RUN wget http://scala-lang.org/files/archive/scala-2.11.8.deb && \
+    dpkg -i scala-2.11.8.deb
 
 WORKDIR /
 
